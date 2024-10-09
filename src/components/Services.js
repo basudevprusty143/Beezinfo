@@ -46,6 +46,8 @@ const Services = () => {
           </Col>
         ))}
       </Row>
+      <h2 className="hading2">Your business is already listed! Here's how to claim it.</h2>
+      <p className="Paragrap1">Our team will verify and approve your claim. Once approved, the business will appear in your profile.</p>
     </Container>
   );
 };
