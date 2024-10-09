@@ -12,17 +12,17 @@ import softwareIcon from '../assets/images/Software.jpg';
 import realEstateIcon from '../assets/images/RealEstate.jpg';
 import othersIcon from '../assets/images/Others.jpg';
 
-// Updating the services array with imported images
+// Updating the services array with imported images and links
 const services = [
-  { title: 'Consultancy', icon: consultancyIcon },
-  { title: 'Restaurant', icon: restaurantIcon },
-  { title: 'Mall', icon: mallIcon },
-  { title: 'Cafe', icon: cafeIcon },
-  { title: 'Hotel', icon: hotelIcon },
-  { title: 'Salon', icon: salonIcon },
-  { title: 'Software', icon: softwareIcon },
-  { title: 'Real Estate', icon: realEstateIcon },
-  { title: 'Others', icon: othersIcon }
+  { title: 'Consultancy', icon: consultancyIcon, link: '/consultancy' },
+  { title: 'Restaurant', icon: restaurantIcon, link: '/restaurant' },
+  { title: 'Mall', icon: mallIcon, link: '/mall' },
+  { title: 'Cafe', icon: cafeIcon, link: '/cafe' },
+  { title: 'Hotel', icon: hotelIcon, link: '/hotel' },
+  { title: 'Salon', icon: salonIcon, link: '/salon' },
+  { title: 'Software', icon: softwareIcon, link: '/software' },
+  { title: 'Real Estate', icon: realEstateIcon, link: '/real-estate' },
+  { title: 'Others', icon: othersIcon, link: '/others' }
 ];
 
 const Services = () => {
@@ -30,13 +30,19 @@ const Services = () => {
     <Container className="text-center my-5">
       <Row>
         {services.map((service, index) => (
-          <Col xs={6} md={3} key={index} className="my-2">
-            <Card className="h-100">
-              <Card.Body>
-                <img src={service.icon} alt={service.title} className="img-fluid mb-2" />
-                <h6>{service.title}</h6>
-              </Card.Body>
-            </Card>
+          <Col 
+            key={index} 
+            xs={4} sm={4} md={4} lg={1}  // Full width on xs, 2 cards per row on sm, 3 cards per row on md, and 3 cards per row on lg
+            className="my-2"
+          >
+            <a href={service.link} style={{ textDecoration: 'none', color: 'inherit' }}>
+              <Card className="h-100 service-card">
+                <Card.Body>
+                  <img src={service.icon} alt={service.title} className="img-fluid mb-2" />
+                  <h6>{service.title}</h6>
+                </Card.Body>
+              </Card>
+            </a>
           </Col>
         ))}
       </Row>
@@ -45,3 +51,4 @@ const Services = () => {
 };
 
 export default Services;
+

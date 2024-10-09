@@ -150,3 +150,57 @@ find-btns {
   border-color: #ff6600;
 }
 
+/* General card styling */
+.service-card {
+  border: none; /* Remove default card border */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+  border-radius: 10px; /* Rounded corners */
+  overflow: hidden; /* Ensure content stays inside rounded corners */
+}
+
+/* On hover, make the card "pop" */
+.service-card:hover {
+  transform: translateY(-10px); /* Lift the card slightly */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Enhance the shadow effect */
+  cursor: pointer; /* Show pointer on hover */
+}
+
+/* Image styling inside the card */
+.service-card img {
+  border-radius: 5px; /* Round the edges of images slightly */
+  margin-bottom: 10px; /* Space between the image and title */
+}
+
+/* Title styling */
+.service-card h6 {
+  font-size: 1rem; /* Slightly larger font for the title */
+  font-weight: bold;
+  color: #333; /* Darker text color */
+  text-align: center; /* Center the title */
+}
+
+/* Card layout adjustments */
+.container .row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.service-card a {
+  text-decoration: none;
+  color: inherit; /* Keep text color unchanged */
+}
+
+/* Adjust spacing between cards */
+.col {
+  margin-bottom: 20px; /* Space between each card */
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+  .service-card img {
+    height: 100px; /* Fix image height on medium and larger screens */
+    object-fit: cover; /* Ensure image maintains aspect ratio */
+  }
+}
+
